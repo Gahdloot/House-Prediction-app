@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{% block title %}Home Page {% endblock%}
+
+{% block body %}
+<br><br>
+<div class="jumbotron container" style="margin-top: 5rem; width:60vw;">
+    {% if room == 1 %}
+<h1>The Result of {{room}} bedroom in {{echo.city}}, {{echo.state}} state</h1>
+
+    <span>{{echo.apr*0.7}}</span>
+    {% else %}
+    <h4>The Result of {{room}} bedroom in {{echo.city}}, {{echo.state}} state...</h4>
+    <h2 style="text-decoration: line-through">N{{echo.apr*room*0.85}}</h2>
+    <h2>N{{echo.apr*room*0.96}}</h2>
+
+    {% endif %}
+</div>
+{% endblock%}

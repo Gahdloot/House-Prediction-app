@@ -1,0 +1,54 @@
+{% extends 'base.html'%}
+{% block title %}Test Page {% endblock%}
+
+{% block body %}
+Test
+<hr>
+<div class="container">
+    <h2>Run New Test</h2>
+
+<form action="/test" method="POST">
+  <div class="form-row align-items-center container">
+    <div class="col-auto my-1">
+      <label class="mr-sm-2" for="states">states</label>
+      <select class="custom-select mr-sm-2" id="states" name="states">
+        <!--option selected>Choose...</option-->
+          {% for item in post %}
+            <option value="{{item}}">{{item}}</option>
+
+            {% endfor %}
+      </select>
+    </div>
+    <div class="col-auto my-1">
+      <label class="mr-sm-2" for="city">city</label>
+      <select class="custom-select mr-sm-2" id="city" name="city">
+        <!--option selected>Choose...</option-->
+          {% for item in state.get('LAGOS') %}
+            <option value="{{item}}">{{item}}</option>
+
+            {% endfor %}
+      </select>
+    </div>
+    <br>
+    <div class="col-auto my-1">
+      <label class="mr-sm-2" for="bedroom">bedroom</label>
+      <select class="custom-select mr-sm-2" id="bedroom" name="bedroom">
+        <!--option selected>Choose...</option-->
+          {% for item in range(1,6) %}
+            <option value="{{item}}">{{item}}</option>
+
+            {% endfor %}
+            <option value="unsure">undefined</option>
+      </select>
+    </divs
+    <div class="col-auto my-1">
+      <button type="submit" class="btn btn-primary" value="POST">Submit</button>
+    </div>
+  </div>
+</form>
+
+</div>
+
+
+
+{% endblock %}
